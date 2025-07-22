@@ -1,0 +1,1 @@
+This folder will host all the audio files of the users for training.

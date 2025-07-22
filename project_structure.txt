@@ -1,0 +1,20 @@
+.
+├── data/                               # All project data.
+│   ├── customer-info/                  # Initial tabular data.
+│   ├── images/                         # Raw facial images.
+│   ├── audio/                          # Raw audio samples.
+│   └── outputs/                        # Processed data outputs.
+│       ├── merged_customer_data.csv    # Merged tabular data.
+│       ├── image_features.csv          # Image feature data.
+│       └── audio_features.csv          # Audio feature data.
+├── models/                             # Trained model artifacts.
+│   ├── facial_recognition_model.pkl    # Face recognition model.
+│   ├── voice_verification_model.pkl    # Voice verification model.
+│   └── product_recommendation_model.pkl# Product recommendation model.
+├── notebooks/                          # Development notebooks.
+│   ├── 01_Data_Processing.ipynb        # Data processing & feature engineering.
+│   └── 02_Model_Training.ipynb         # Model training & evaluation.
+├── scripts/                            # Final application scripts.
+│   └── app.py                          # Main CLI application.
+├── .gitignore                          # Git ignore file.
+└── requirements.txt                    # Project dependencies.
