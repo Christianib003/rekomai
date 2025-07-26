@@ -9,3 +9,4 @@ scipy
 joblib
 jupyter
 librosa
+opencv-python
