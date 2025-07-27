@@ -32,7 +32,8 @@ venv/
 .venv/
 env/
 ENV/
-
 # IDE / Editor specific
 .vscode/
 .idea/
+# Ignore custom Python version
+.python-version
