@@ -1,0 +1,16 @@
+{
+  "training_timestamp": "2025-07-27T19:31:54.056240",
+  "model_name": "Random Forest",
+  "speakers": [
+    "Jeremiah",
+    "armand",
+    "christian"
+  ],
+  "feature_count": 16,
+  "performance": {
+    "accuracy": 1.0,
+    "f1_score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0
+  }
+}
