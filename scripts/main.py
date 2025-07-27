@@ -1,7 +1,7 @@
-from . import auth
+# scripts/main.py
+from . import auth, recommendation, utils
 import warnings
 
-# Suppress the StandardScaler feature names warning
 warnings.filterwarnings("ignore", category=UserWarning)
 
 def get_image_input():
@@ -10,45 +10,57 @@ def get_image_input():
     return image_path
 
 def main():
-    """Main function to orchestrate the sequential authentication pipeline."""
-    print("--- User Identity and Product Recommendation System ---\n")
+    """Main function to orchestrate the full pipeline."""
+    print("--- RekomAI: User Authentication & Recommendation System ---\n")
 
-    artifacts = auth.load_artifacts()
-    if not artifacts:
+    auth_artifacts = auth.load_artifacts()
+    prod_artifacts = recommendation.load_product_artifacts()
+    if not auth_artifacts or not prod_artifacts:
         return
 
-    # Step 1: Get image and perform facial recognition
+    # --- Step 1: Authentication Flow ---
     image_path = get_image_input()
+    
+    # Corrected: Unpack the dictionary to pass individual arguments
     recognized_name = auth.run_face_auth(
         image_path,
-        artifacts['face_model'],
-        artifacts['face_scaler'],
-        artifacts['face_encoder']
+        auth_artifacts['face_model'],
+        auth_artifacts['face_scaler'],
+        auth_artifacts['face_encoder']
     )
 
-    # Step 2: If face is recognized, proceed to voice verification
     if recognized_name:
         print(f"\nWelcome, {recognized_name}. Please verify your identity with your voice.")
         audio_path = input("Enter the path to your voice sample: ")
         
+        # Corrected: Unpack the dictionary here as well
         voice_auth_passed = auth.run_voice_auth(
-            recognized_name, # Use the name from the face scan for verification
+            recognized_name,
             audio_path,
-            artifacts['voice_model'],
-            artifacts['voice_scaler'],
-            artifacts['voice_encoder']
+            auth_artifacts['voice_model'],
+            auth_artifacts['voice_scaler'],
+            auth_artifacts['voice_encoder']
         )
         
         if voice_auth_passed:
             print("\n======================================")
             print(f"🔐 AUTHENTICATION SUCCESSFUL for {recognized_name}!")
             print("======================================")
-            print("(Product recommendation model would be called here.)\n")
-        else:
-            print("\n--- Authentication Failed ---")
-    else:
-        print("\n--- Authentication Failed ---")
 
+            tabular_data_path = 'data/customer-info/merged_dataset.csv'
+            user_profile = utils.get_user_profile_data(recognized_name, tabular_data_path)
+            
+            if user_profile is not None:
+                recommended_product = recommendation.run_product_recommendation(user_profile, prod_artifacts)
+                print("\n--------------------------------------")
+                print(f"✨ Recommended Product Category for you: {recommended_product}")
+                print("--------------------------------------\n")
+            else:
+                print("\nCould not generate a recommendation for this user.")
+        else:
+            print("\n--- Authentication Failed at Voice Verification ---")
+    else:
+        print("\n--- Authentication Failed at Facial Recognition ---")
 
 if __name__ == "__main__":
     main()
