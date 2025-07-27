@@ -68,6 +68,7 @@ _This video shows the entire process, from identity verification to product reco
 - Christian Iradukunda Byiringiro  
 - Benitha Rutagengwa  
 - Armand Kayiranga
+- Jeremiah Agbaje
 
 ---
 
