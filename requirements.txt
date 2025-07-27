@@ -3,9 +3,3 @@ pandas
 scikit-learn
 matplotlib
 tensorflow
-seaborn
-Pillow
-scipy
-joblib
-jupyter
-librosa
