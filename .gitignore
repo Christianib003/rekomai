@@ -1,5 +1,2 @@
 # Ignore Python Environments
 .venv/
-
-# Ignore custom Python version
-.python-version
