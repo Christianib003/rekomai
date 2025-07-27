@@ -1,5 +1,5 @@
 {
-  "training_timestamp": "2025-07-27T20:25:21.256715",
+  "training_timestamp": "2025-07-27T21:48:01.129965",
   "model_name": "Random Forest",
   "speakers": [
     "Jeremiah",
@@ -11,6 +11,8 @@
     "accuracy": 1.0,
     "f1_score": 1.0,
     "precision": 1.0,
-    "recall": 1.0
+    "recall": 1.0,
+    "train_loss": 0.08613462542127297,
+    "test_loss": 0.1715913421380719
   }
 }
