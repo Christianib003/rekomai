@@ -1,9 +1,4 @@
-.
-├── data/                               # All project data.
-│   ├── customer-info/                  # Initial tabular data.
-│   ├── images/                         # Raw facial images.
-│   ├── audio/                          # Raw audio samples.
-│   └── outputs/                        # Processed data outputs.
+data outputs.
 │       ├── merged_customer_data.csv    # Merged tabular data.
 │       ├── image_features.csv          # Image feature data.
 │       └── audio_features.csv          # Audio feature data.
