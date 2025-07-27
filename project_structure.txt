@@ -1,7 +1,12 @@
-data outputs.
+.
+├── data/                               # All project data.
+│   ├── customer-info/                  # Initial tabular data.
+│   ├── images/                         # Raw facial images.
+│   ├── audio/                          # Raw audio samples.
+│   └── outputs/                        # Processed data outputs.
 │       ├── merged_customer_data.csv    # Merged tabular data.
 │       ├── image_features.csv          # Image feature data.
-│       └── audio_features.csv          # Audio feature dat.
+│       └── audio_features.csv          # Audio feature data.
 ├── models/                             # Trained model artifacts.
 │   ├── facial_recognition_model.pkl    # Face recognition model.
 │   ├── voice_verification_model.pkl    # Voice verification model.
