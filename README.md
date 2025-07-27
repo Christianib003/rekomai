@@ -167,7 +167,8 @@ RekomAI/
 │   ├── __init__.py                   # Makes 'scripts' a package.
 │   ├── main.py                       # Main CLI application.
 │   ├── auth.py                       # Authentication logic module.
-│   └── utils.py                      # Feature extraction utilities.
+│   └── utils.py
+|    ├── recommendation.py                     # Feature extraction utilities.
 ├── .gitignore                        # Git ignore file.
 └── requirements.txt                  # Project dependencies.
 ```
@@ -276,8 +277,8 @@ The table below summarizes the performance of the final selected model for each 
 | Model | Accuracy | F1-Score (Weighted) | Log Loss |
 | :--- | :---: | :---: | :---: |
 | **Facial Recognition** | 95.6% | 0.95 | 0.1387 |
-| **Voice Verification** | 75.0% | 0.67 | N/A |
-| **Product Recommendation**| 74.0% | 0.74 | N/A |
+| **Voice Verification** | 75.0% | 0.67 |  |
+| **Product Recommendation**| 74.0% | 0.74 | 1.04 |
 
 ### **7.2 Analysis and Observations**
 
@@ -313,31 +314,6 @@ To run the system, follow these steps from your project's root directory:
     ```bash
     python -m scripts.main
     ```
-
-### **8.2 Simulating Authentication Scenarios**
-
-The application will guide you through the authentication process. You can simulate both a successful login and a failed attempt.
-
-#### **Simulating a Successful Authentication**
-
-1.  When prompted, enter the path to a facial image of a registered user.
-    > `Please enter the path to your facial image to begin: data/images/Christian_neutral.jpg`
-2.  If the face is recognized, the system will greet you by name and ask for a voice sample.
-    > `Welcome, Christian. Please verify your identity with your voice.`
-    > `Enter the path to your voice sample:`
-3.  Provide the path to a voice sample from the **same** user.
-    > `Enter the path to your voice sample: data/audio/christian_approve.ogg`
-4.  **Expected Outcome**: The system will confirm both matches and grant access.
-    > `AUTHENTICATION SUCCESSFUL for Christian!`
-
-#### **Simulating an Unauthorized Attempt (Failure)**
-
-1.  Provide an image path for one user.
-    > `Please enter the path to your facial image to begin: data/images/Christian_neutral.jpg`
-2.  When prompted for the audio, provide a sample from a **different** user.
-    > `Enter the path to your voice sample: data/audio/benitha_confirm.aac`
-3.  **Expected Outcome**: The system will detect the voiceprint mismatch and deny access.
-    > `ACCESS DENIED: Voiceprint does not match.`
     
 
 ## **9. Limitations and Future Work**
@@ -370,4 +346,3 @@ This project was a collaborative effort by all team members. The specific contri
 * [Armand Kayiranga](https://github.com/Armandkay)
 * [Benitha Uwituze](https://github.com/buwituze)
 * [Jeremiah Ogbaje](https://github.com/j-agbaje)
-
