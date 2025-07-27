@@ -1,12 +1,18 @@
+# Core ML/Data Science
 numpy
 pandas
 scikit-learn
-matplotlib
 tensorflow
+xgboost
+
+# Data Visualization
+matplotlib
 seaborn
-Pillow
-scipy
-joblib
-jupyter
+
+# Development
+jupyterlab
+
+# Audio/Image Processing
 librosa
+Pillow
 opencv-python
