@@ -1,4 +1,4 @@
-# Rekomai
+# rekomai
 Welcome to our repository for the **Formative 2 Assignment** on **Multimodal Data Preprocessing**. This project simulates a system that verifies a user's identity using both facial recognition and voice validation before recommending products tailored to them. It brings together different types of data — tabular, image, and audio — to demonstrate a real-world, intelligent authentication and recommendation workflow.
 
 ---
